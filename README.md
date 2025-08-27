@@ -1,3 +1,51 @@
-# bin-loader
+# Bin-Loader
 
-Esta es una herramienta echa por mi para poder ejecutar .bin en OS windows actuando a bajo nivel
+Bin-Loader es una herramienta para ejecutar archivos .bin, como shellcode, en sistemas operativos Windows. Opera a bajo nivel, asignando memoria ejecutable y lanzando el contenido en un hilo separado, de manera nativa.
+
+### ¿Qué la hace especial?
+- 100% en C++: Utiliza librerías como windows.h para funciones de WinAPI como VirtualAlloc y CreateThread, iostream para entrada/salida, fstream para lectura de archivos y cstring para operaciones como memcpy. No tiene dependencias externas.
+- Operación a bajo nivel: Asigna memoria con permisos de ejecución (PAGE_EXECUTE_READWRITE), copia el contenido del .bin y lo ejecuta en un hilo dedicado. Incluye prácticas de seguridad como limpiar el buffer original después de la copia.
+- Soporte actual: Solo admite archivos locales (.bin en la máquina). No soporta descargas desde servidores HTTP. Se está trabajando en agregar soporte para archivos remotos.
+
+Esta herramienta es para cargar y ejecutar binarios/shellcode en Windows. Adecuada para desarrolladores, investigadores de seguridad o entusiastas del reversing.
+
+### Requisitos
+- Sistema operativo: Windows (probado en versiones modernas).
+- Compilador: C++ compatible con WinAPI (como Visual Studio o MinGW).
+- No se requieren bibliotecas adicionales; todo es estándar.
+
+### Cómo usarlo
+1. Compila el código: Usa un compilador. Por ejemplo, con g++:
+   ```
+   g++ loader.cpp -o loader.exe
+   ```
+   (Incluye las flags necesarias para WinAPI si usas MinGW).
+
+2. Ejecuta el loader: Pasa la ruta al archivo .bin como argumento:
+   ```
+   loader.exe <ruta_al_shellcode.bin>
+   ```
+   - El programa lee el .bin, lo carga en memoria ejecutable y lo lanza en un hilo.
+   - Si se ejecuta correctamente, muestra el mensaje: "Shellcode ejecutado exitosamente."
+
+   Notas importantes:
+   - El .bin debe ser shellcode válido y compatible con la arquitectura (x86/x64).
+   - Si el shellcode no retorna, ajusta el WaitForSingleObject según sea necesario.
+   - Manejo de errores: Verifica argumentos, apertura de archivos, asignación de memoria y creación de hilos, mostrando mensajes en caso de fallos.
+
+### Demo
+
+la demo es ejecutar un .bin que me da una sesion sliver (c2)
+
+https://github.com/user-attachments/assets/2019e6b1-9225-42ff-9b2a-0a36239611e8
+
+### Limitaciones actuales
+- Solo archivos locales: No soporta descargas HTTP/HTTPS (en desarrollo).
+- Asume que el shellcode es auto-contenido y compatible; no maneja dependencias externas.
+- Probado en entornos controlados: Ejecutar shellcode puede ser riesgoso; no ejecutar código no confiable.
+
+### Futuro desarrollo
+- Soporte para archivos remotos (HTTP/HTTPS).
+Para contribuir, reportar un bug o sugerir mejoras, abre un issue o un pull request en el repositorio. El feedback es aceptado.
+
+Gracias por usar Bin-Loader. Si hay preguntas, deja un comentario.
