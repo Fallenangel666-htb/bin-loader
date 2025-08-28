@@ -37,6 +37,10 @@ Esta herramienta es para cargar y ejecutar binarios/shellcode en Windows. Adecua
 
 la demo es ejecutar un .bin que me da una sesion sliver (c2)
 
+Lo estoy probando en mi portatil OS fedora usando un podman (docker) de kali linux (debian) y ejecutando el .bin en la ultima version de windows 11 con el defender y firewalls activos en una maquina virtual de virtual box
+
+<img width="1762" height="1011" alt="Captura de pantalla 2025-08-28 143003" src="https://github.com/user-attachments/assets/a6cd1a7c-2555-460b-95a2-881ce1071a70" />
+
 https://github.com/user-attachments/assets/2019e6b1-9225-42ff-9b2a-0a36239611e8
 
 ### Limitaciones actuales
