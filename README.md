@@ -26,8 +26,7 @@ Esta herramienta es para cargar y ejecutar binarios/shellcode en Windows. Adecua
    loader.exe <ruta_al_shellcode.bin>
    ```
    - El programa lee el .bin, lo carga en memoria ejecutable y lo lanza en un hilo.
-   - Si se ejecuta correctamente, muestra el mensaje: "Shellcode ejecutado exitosamente."
-
+   
    Notas importantes:
    - El .bin debe ser shellcode válido y compatible con la arquitectura (x86/x64).
    - Si el shellcode no retorna, ajusta el WaitForSingleObject según sea necesario.
