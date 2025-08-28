@@ -45,7 +45,6 @@ https://github.com/user-attachments/assets/2019e6b1-9225-42ff-9b2a-0a36239611e8
 ### Limitaciones actuales
 - Solo archivos locales: No soporta descargas HTTP/HTTPS (en desarrollo).
 - Asume que el shellcode es auto-contenido y compatible; no maneja dependencias externas.
-- Probado en entornos controlados: Ejecutar shellcode puede ser riesgoso; no ejecutar código no confiable.
 
 ### Futuro desarrollo
 - Soporte para archivos remotos (HTTP/HTTPS).
