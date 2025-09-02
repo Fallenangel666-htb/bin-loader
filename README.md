@@ -40,7 +40,7 @@ Lo estoy probando en mi portatil OS fedora usando un podman (docker) de kali lin
 
 <img width="1762" height="1011" alt="Captura de pantalla 2025-08-28 143003" src="https://github.com/user-attachments/assets/a6cd1a7c-2555-460b-95a2-881ce1071a70" />
 
-https://github.com/user-attachments/assets/2019e6b1-9225-42ff-9b2a-0a36239611e8
+No puedo subir un video de prueba porque es muy grande el video :/
 
 ### Limitaciones actuales
 - Solo archivos locales: No soporta descargas HTTP/HTTPS (en desarrollo).
